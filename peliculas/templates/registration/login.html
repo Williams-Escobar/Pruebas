@@ -1,0 +1,28 @@
+{% extends 'peliculas/base.html'%}
+{% block content %}
+    {% if form.errors %}
+        <p>Contraseña y usuario incorrectas porfavor intentar de</p>
+    {% endif %}
+<div class="abs-center" style=" display: flex;   padding-top: 50px;   justify-content: center;"  >
+    <form method="post" action="{% url 'login' %}" class="border p-3 form" style="background-color: #cfd3ce; padding-bottom:100px;" >
+    {% csrf_token %}
+       
+            <div class="form-group">
+                <label>{{ form.username.label_tag }}</label>
+                {{ form.username }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label>{{ form.password.label_tag }}</label>
+                {{ form.password }}
+            </div>
+    
+       
+       <div style="padding-top: 20;">
+        <input type="submit" class="btn btn-primary" value="Iniciar sesión" />
+        <input type="hidden" name="next" value="{{ next }}" />
+       </div>
+        
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'peliculas/base.html'%}
+{% block content %}
+    <h2 style="justify-content: center; padding-left: 550; padding-top: 20;">Nueva Categoria</h2>
+    <div class="abs-center" style=" display: flex;   padding-top: 49px;   justify-content: center;" >
+    <form method="POST" class="border p-3 form" style="background-color: #cfd3ce; padding-bottom:100px;   width: 450px;" >{% csrf_token %}
+        <div class="form-group">
+        {{ form.as_p }}
+    </div>
+        <button type="submit" class="btn btn-primary form-control">Guardar</button>
+    </form>
+</div>
+{% endblock %}
